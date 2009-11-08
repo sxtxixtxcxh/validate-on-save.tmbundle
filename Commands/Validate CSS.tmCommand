@@ -6,14 +6,10 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-FILENAME = ENV['TM_FILENAME']
-FILEPATH = ENV['TM_FILEPATH']
-SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
-BINARY   = "#{SUPPORT}/bin/jsl"
 
-output = `"#{BINARY}" -process "#{FILEPATH}" -nologo -conf "#{SUPPORT}/conf/jsl.textmate.conf"`.gsub!(FILENAME, '')
+output = `#{ENV['TM_BUNDLE_SUPPORT']}/bin/css_validator.rb`
 
-puts "Running syntax check with JavaScript Lint"
+puts "Running syntax check..."
 result = output.strip()
 
 if result =~ /0 error\(s\)\, 0 warning\(s\)/i
