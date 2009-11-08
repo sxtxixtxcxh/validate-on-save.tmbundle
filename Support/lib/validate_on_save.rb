@@ -1,4 +1,4 @@
-require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate-on-save.config"
+require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate_on_save.config"
 
 
 def validate_on_save(options = {})

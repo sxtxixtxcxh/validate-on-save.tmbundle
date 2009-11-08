@@ -1,6 +1,6 @@
 
 # Only notify on syntax error
-VOS_ONLY_ON_ERROR = false
+VOS_ONLY_ON_ERROR = true
 
 # Output validator information
 VOS_VALIDATOR_INFO = false
