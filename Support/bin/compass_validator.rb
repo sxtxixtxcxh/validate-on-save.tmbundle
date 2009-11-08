@@ -16,9 +16,6 @@ end
 
 if !defined? COMPASS_ROOT 
   COMPASS_ROOT = FILEPATH.split("/app/")[0]
-end
-
-if !defined? COMPASS_ROOT 
   UPDATE_COMMAND = "compass --update #{COMPASS_ROOT} 2>&1"
   result = `#{UPDATE_COMMAND}`
 else
