@@ -10,7 +10,7 @@ FILENAME = ENV['TM_FILENAME']
 FILEPATH = ENV['TM_FILEPATH']
 SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
 
-result = `#{SUPPORT}/bin/compass_validator.rb`
+result = `#{SUPPORT.gsub(' ','\ ')}/bin/compass_validator.rb`
 #result.gsub(/^\s*#{FILENAME}.*?$/, '')
 
 result.gsub!(/^\s*directory.*?$/, '')
