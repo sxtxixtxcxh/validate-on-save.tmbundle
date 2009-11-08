@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+output = `#{ENV['TM_BUNDLE_SUPPORT'].gsub(' ','\ ')}/bin/css_validator.rb`
+
+puts "Running syntax check..."
+result = output.strip()
+
+if result =~ /0 error\(s\)\, 0 warning\(s\)/i
+  `growlnotify -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "JavaScript Syntax Check" -a "Textmate"`
+else
+  `growlnotify -p 'Emergency' -m '#{result}' -n 'Textmate Syntax Check' -t "JavaScript Syntax Check" -a "Textmate"`
+end
+
+puts result</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>Validate CSS</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>uuid</key>
+	<string>003C16AB-C2FD-4AB8-99E2-A7B22C126626</string>
+</dict>
+</plist>
