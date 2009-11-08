@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 FILEPATH = ENV['TM_FILEPATH']
 PATHS = File.dirname(FILEPATH).split('/');
-#PROJECT_ROOT =  FILEPATH.split("/app/")[0]
 dir = ''
 PATHS.reverse.each do |path|
   dir = PATHS[0,PATHS.index(path)+1].join('/')
@@ -14,10 +13,8 @@ PATHS.reverse.each do |path|
   end
 end
 
-if !defined? COMPASS_ROOT 
-  COMPASS_ROOT = FILEPATH.split("/app/")[0]
-  UPDATE_COMMAND = "compass --update #{COMPASS_ROOT} 2>&1"
-  result = `#{UPDATE_COMMAND}`
+if defined? COMPASS_ROOT || COMPASS_ROOT = FILEPATH.split("/app/")[0]
+  result = `compass --update #{COMPASS_ROOT.gsub(' ','\ ')} 2>&1`
 else
   result = "Could not automatically determine your Compass project root."
 end
