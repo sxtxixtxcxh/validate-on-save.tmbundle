@@ -38,7 +38,7 @@ puts result</string>
 	<key>name</key>
 	<string>Validate Compass</string>
 	<key>output</key>
-	<string>openAsNewDocument</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.sass</string>
 	<key>uuid</key>
