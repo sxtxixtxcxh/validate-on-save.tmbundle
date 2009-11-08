@@ -6,6 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
+require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
+require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate-on-save.config"
 FILENAME = ENV['TM_FILENAME']
 FILEPATH = ENV['TM_FILEPATH']
 SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
@@ -22,15 +24,17 @@ result.gsub!(/^\s*unchanged.*?$/, '')
 result.gsub!(/^\s*identical.*?$/, '')
 result.strip!()
 
-if result == ''
-  result = 'Syntax OK'
-  `growlnotify -p 'Low' -m '#{result}' -n 'Textmate Syntax Check' -t "Compass Compile" -a "Textmate"`
+if result == ""
+  if !VOS_ONLY_ON_ERROR
+    puts "Syntax OK" if VOS_TM_NOTIFY
+    `#{VOS_GROWL_BIN} -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
+  end
 else
   result.gsub!("'","\\\\'")
-  `growlnotify -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "Compass Compile" -a "Textmate"`
-end
-
-puts result</string>
+  puts result if VOS_TM_NOTIFY
+  `#{VOS_GROWL_BIN} -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
+  TextMate.go_to :line =&gt; $1 if result =~ /^(\d+):\s/i
+end</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>

@@ -7,20 +7,27 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
+require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate-on-save.config"
+TM_PHP = ENV['TM_PHP'] ||= "php"
+
 version = %x{'php' -v}.split[0..2].join(' ')
-puts "Running syntax check with " + version + "…"
+info =  "Running syntax check with " + version + "…"
+info = (VOS_VALIDATOR_INFO) ? "Running syntax check with " + version + "\n" : ""
 
-result = `'php' -d display_errors=on -l`.gsub('in -', '')
+result = `"#{TM_PHP}" -d display_errors=on -l`.gsub('in -', '')
 
-if result =~ /^parse error/i
-  `/usr/local/bin/growlnotify -p 'Emergency' -m '#{result}' -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"`
+if result =~ /^No syntax errors detected/i
+  if !VOS_ONLY_ON_ERROR
+    puts info + "Syntax OK" if VOS_TM_NOTIFY
+    `#{VOS_GROWL_BIN} -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"` if VOS_GROWL
+  end
 else
-  `/usr/local/bin/growlnotify -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"`
-end
-
-puts result</string>
+  puts info + result if VOS_TM_NOTIFY
+  `#{VOS_GROWL_BIN} -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"` if VOS_GROWL
+  TextMate.go_to :line =&gt; $1 if result =~ /line (\d+)/i
+end</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
