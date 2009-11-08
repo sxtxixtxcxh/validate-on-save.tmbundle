@@ -7,15 +7,13 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 
-output = `#{ENV['TM_BUNDLE_SUPPORT'].gsub(' ','\ ')}/bin/css_validator.rb`
+result = `#{ENV['TM_BUNDLE_SUPPORT'].gsub(' ','\ ')}/bin/css_validator.rb`
 
-puts "Running syntax check..."
-result = output.strip()
-
-if result =~ /0 error\(s\)\, 0 warning\(s\)/i
-  `growlnotify -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "JavaScript Syntax Check" -a "Textmate"`
+if result =~ /Congratulations! No Error Found./i
+   result = "Congratulations! No Error Found."
+  `growlnotify -p 'Low' -m '#{result}' -n 'Textmate Syntax Check' -t "CSS Syntax Check" -a "Textmate"`
 else
-  `growlnotify -p 'Emergency' -m '#{result}' -n 'Textmate Syntax Check' -t "JavaScript Syntax Check" -a "Textmate"`
+  `growlnotify -p 'Emergency' -m '#{result}' -n 'Textmate Syntax Check' -t "CSS Syntax Check" -a "Textmate"`
 end
 
 puts result</string>
