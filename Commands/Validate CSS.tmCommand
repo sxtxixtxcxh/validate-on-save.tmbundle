@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 
-output = `#{ENV['TM_BUNDLE_SUPPORT']}/bin/css_validator.rb`
+output = `#{ENV['TM_BUNDLE_SUPPORT'].gsub(' ','\ ')}/bin/css_validator.rb`
 
 puts "Running syntax check..."
 result = output.strip()
@@ -24,7 +24,7 @@ puts result</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
-	<string>Validate JavaScript</string>
+	<string>Validate CSS</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
