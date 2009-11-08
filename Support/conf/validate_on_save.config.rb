@@ -1,15 +1,15 @@
 
-# Only notify on syntax error
-VOS_ONLY_ON_ERROR = true
-
 # Output validator information
 VOS_VALIDATOR_INFO = false
+
+# Only notify on syntax error
+VOS_ONLY_ON_ERROR = true
 
 # Use Textmate's tooltip notification
 VOS_TM_NOTIFY = true
 
-# Use Growl notifications
+# Use Growl notification
 VOS_GROWL = false
 
-# Path to growlnotify binary
-VOS_GROWL_BIN = "/usr/local/bin/growlnotify"
+# Jump to line with error
+VOS_JUMP_TO_ERROR = true
