@@ -32,7 +32,7 @@ validate_on_save({
   result.gsub!("'","\\\\'")
 end</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>

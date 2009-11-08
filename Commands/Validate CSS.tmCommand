@@ -19,7 +19,7 @@ validate_on_save({
   :lang =&gt; "CSS"
 })</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
