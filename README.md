@@ -25,6 +25,16 @@ Supported Languages
   * Compass (still a bit buggy) 
 
 
+Installation
+------------
+
+    cd ~/Library/Application\ Support/TextMate/Bundles/;
+    
+    git clone git://github.com/sxtxixtxcxh/validate-on-save.tmbundle.git Validate\ On\ Save.tmbundle;
+    
+    osascript -e 'tell app "TextMate" to reload bundles';
+
+
 Caveats
 -------
 
