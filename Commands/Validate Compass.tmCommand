@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+FILENAME = ENV['TM_FILENAME']
+FILEPATH = ENV['TM_FILEPATH']
+SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
+
+result = `#{SUPPORT}/bin/compass_validator.rb`
+#result.gsub(/^\s*#{FILENAME}.*?$/, '')
+
+result.gsub!(/^\s*directory.*?$/, '')
+result.gsub!(/^\s*compile.*?$/, '')
+result.gsub!(/^\s*create.*?$/, '')
+result.gsub!(/^\s*overwrite.*?$/, '')
+result.gsub!(/^\s*exists.*?$/, '')
+result.gsub!(/^\s*unchanged.*?$/, '')
+result.gsub!(/^\s*identical.*?$/, '')
+result.strip!()
+
+if result == ''
+  result = 'Syntax OK'
+  `growlnotify -p 'Low' -m '#{result}' -n 'Textmate Syntax Check' -t "Compass Compile" -a "Textmate"`
+else
+  result.gsub!("'","\\\\'")
+  `growlnotify -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "Compass Compile" -a "Textmate"`
+end
+
+puts result</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>Validate Compass</string>
+	<key>output</key>
+	<string>openAsNewDocument</string>
+	<key>scope</key>
+	<string>source.sass</string>
+	<key>uuid</key>
+	<string>E2ED0198-DB97-45B5-84BA-AD2D01B31D2F</string>
+</dict>
+</plist>

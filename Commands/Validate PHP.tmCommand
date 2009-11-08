@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
+version = %x{'php' -v}.split[0..2].join(' ')
+puts "Running syntax check with " + version + "…"
+
+result = `'php' -d display_errors=on -l`.gsub('in -', '')
+
+if result =~ /^parse error/i
+  `/usr/local/bin/growlnotify -p 'Emergency' -m '#{result}' -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"`
+else
+  `/usr/local/bin/growlnotify -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"`
+end
+
+puts result</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>Validate PHP</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>5C4ABB28-6E89-43BF-8514-1E43CDBB2E22</string>
+</dict>
+</plist>

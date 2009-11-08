@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
+puts `"${TM_RUBY:=ruby}" -e'puts "Running syntax check with ruby-" + RUBY_VERSION.to_s'`
+result = `"${TM_RUBY:=ruby}" -wc 2&gt;&amp;1`
+
+if result =~ /Syntax OK/i
+  `growlnotify -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"`  
+else
+  result.gsub!("\`","\\\\`")
+  `growlnotify -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"`  
+end
+
+puts result</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>Validate Ruby</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>uuid</key>
+	<string>83B5DB3E-BA86-41ED-9BDE-7E5B702E4123</string>
+</dict>
+</plist>
