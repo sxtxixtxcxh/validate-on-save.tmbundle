@@ -7,25 +7,17 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
-require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate-on-save.config"
+require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
+
 TM_PHP = ENV['TM_PHP'] ||= "php"
 
-version = %x{'php' -v}.split[0..2].join(' ')
-info =  "Running syntax check with " + version + "…"
-info = (VOS_VALIDATOR_INFO) ? "Running syntax check with " + version + "\n" : ""
-
-result = `"#{TM_PHP}" -d display_errors=on -l`.gsub('in -', '')
-
-if result =~ /^No syntax errors detected/i
-  if !VOS_ONLY_ON_ERROR
-    puts info + "Syntax OK" if VOS_TM_NOTIFY
-    `#{VOS_GROWL_BIN} -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"` if VOS_GROWL
-  end
-else
-  puts info + result if VOS_TM_NOTIFY
-  `#{VOS_GROWL_BIN} -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "PHP Syntax Check" -a "Textmate"` if VOS_GROWL
-  TextMate.go_to :line =&gt; $1 if result =~ /line (\d+)/i
-end</string>
+validate_on_save({
+  :info =&gt; "Running syntax check with " + %x{'php' -v}.split[0..2].join(' ') + "\n",
+  :result =&gt; `"#{TM_PHP}" -d display_errors=on -l`.gsub('in -', ''),
+  :match_ok =&gt; /^No syntax errors detected/i,
+  :match_line =&gt; /line (\d+)/i,
+  :lang =&gt; "PHP"
+})</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

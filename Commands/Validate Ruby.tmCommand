@@ -7,23 +7,20 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
-require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate-on-save.config"
+require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
+
 TM_RUBY = ENV['TM_RUBY'] ||= "ruby"
 
-info = (VOS_VALIDATOR_INFO) ? `"${TM_RUBY}" -e'puts "Running syntax check with ruby-" + RUBY_VERSION.to_s'` + "\n" : ""
-result = `"${TM_RUBY}" -wc 2&gt;&amp;1`.gsub(/\-\:([0-9]+)\: /i, 'Line \1: ')
-
-if result =~ /Syntax OK/i
-  if !VOS_ONLY_ON_ERROR
-    puts info + result if VOS_TM_NOTIFY
-    `#{VOS_GROWL_BIN} -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
-  end
-else
+validate_on_save({
+  :info =&gt; `"${TM_RUBY}" -e'puts "Running syntax check with ruby-" + RUBY_VERSION.to_s'` + "\n",
+  :result =&gt; `"${TM_RUBY}" -wc 2&gt;&amp;1`.gsub(/\-\:([0-9]+)\: /i, 'Line \1: '),
+  :match_ok =&gt; /Syntax OK/i,
+  :match_line =&gt; /line (\d+)/i,
+  :lang =&gt; "Ruby"
+}) do |result|
   result.gsub!("\`","\\\\`")
-  puts info + result if VOS_TM_NOTIFY
-  `#{VOS_GROWL_BIN} -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
-  TextMate.go_to :line =&gt; $1 if result =~ /line (\d+)/i
-end</string>
+end
+</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

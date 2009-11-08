@@ -6,15 +6,14 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
-require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate-on-save.config"
+require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
+require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
+
 FILENAME = ENV['TM_FILENAME']
 FILEPATH = ENV['TM_FILEPATH']
 SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
 
 result = `#{SUPPORT.gsub(' ','\ ')}/bin/compass_validator.rb`
-#result.gsub(/^\s*#{FILENAME}.*?$/, '')
-
 result.gsub!(/^\s*directory.*?$/, '')
 result.gsub!(/^\s*compile.*?$/, '')
 result.gsub!(/^\s*create.*?$/, '')
@@ -24,16 +23,13 @@ result.gsub!(/^\s*unchanged.*?$/, '')
 result.gsub!(/^\s*identical.*?$/, '')
 result.strip!()
 
-if result == ""
-  if !VOS_ONLY_ON_ERROR
-    puts "Syntax OK" if VOS_TM_NOTIFY
-    `#{VOS_GROWL_BIN} -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
-  end
-else
+validate_on_save({
+  :result =&gt; result,
+  :match_ok =&gt; /^$/,
+  :match_line =&gt; /^(\d+):\s/i,
+  :lang =&gt; "SASS"
+}) do |result|
   result.gsub!("'","\\\\'")
-  puts result if VOS_TM_NOTIFY
-  `#{VOS_GROWL_BIN} -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
-  TextMate.go_to :line =&gt; $1 if result =~ /^(\d+):\s/i
 end</string>
 	<key>input</key>
 	<string>selection</string>

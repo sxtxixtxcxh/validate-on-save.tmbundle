@@ -6,26 +6,21 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
-require ENV['TM_BUNDLE_SUPPORT'] + "/conf/validate-on-save.config"
+require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
+require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
+
 FILENAME = ENV['TM_FILENAME']
 FILEPATH = ENV['TM_FILEPATH']
 SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
 BINARY   = "#{SUPPORT}/bin/jsl"
 
-info = (VOS_VALIDATOR_INFO) ? "Running syntax check with JavaScript Lint\n" : ""
-result = `"#{BINARY}" -process "#{FILEPATH}" -nologo -conf "#{SUPPORT}/conf/jsl.textmate.conf"`.gsub!(FILENAME, '').strip()
-
-if result =~ /0 error\(s\)\, 0 warning\(s\)/i
-  if !VOS_ONLY_ON_ERROR
-    puts info + "Syntax OK" if VOS_TM_NOTIFY
-    `#{VOS_GROWL_BIN} -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
-  end
-else
-  puts info + result if VOS_TM_NOTIFY
-  `#{VOS_GROWL_BIN} -p 'Emergency' -m "#{result}" -n 'Textmate Syntax Check' -t "Ruby Syntax Check" -a "Textmate"` if VOS_GROWL
-  TextMate.go_to :line =&gt; $1 if result =~ /^(\d+):\s/i
-end</string>
+validate_on_save({
+  :info =&gt; "Running syntax check with JavaScript Lint\n",
+  :result =&gt; `"#{BINARY}" -process "#{FILEPATH}" -nologo -conf "#{SUPPORT}/conf/jsl.textmate.conf"`.gsub!(FILENAME, '').strip(),
+  :match_ok =&gt; /0 error\(s\)\, 0 warning\(s\)/i,
+  :match_line =&gt; /^(\d+):\s/i,
+  :lang =&gt; "JavaScript"
+})</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
