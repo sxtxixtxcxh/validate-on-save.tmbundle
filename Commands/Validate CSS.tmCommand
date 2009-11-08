@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+FILENAME = ENV['TM_FILENAME']
+FILEPATH = ENV['TM_FILEPATH']
+SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
+BINARY   = "#{SUPPORT}/bin/jsl"
+
+output = `"#{BINARY}" -process "#{FILEPATH}" -nologo -conf "#{SUPPORT}/conf/jsl.textmate.conf"`.gsub!(FILENAME, '')
+
+puts "Running syntax check with JavaScript Lint"
+result = output.strip()
+
+if result =~ /0 error\(s\)\, 0 warning\(s\)/i
+  `growlnotify -p 'Low' -m 'Syntax OK' -n 'Textmate Syntax Check' -t "JavaScript Syntax Check" -a "Textmate"`
+else
+  `growlnotify -p 'Emergency' -m '#{result}' -n 'Textmate Syntax Check' -t "JavaScript Syntax Check" -a "Textmate"`
+end
+
+puts result</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>Validate JavaScript</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>uuid</key>
+	<string>079F7B17-51B5-4C09-8577-77D6A0D827F2</string>
+</dict>
+</plist>
