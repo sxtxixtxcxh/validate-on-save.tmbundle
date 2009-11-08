@@ -37,8 +37,10 @@ Configuration
 
 You can edit some basic output/notification options via `Bundles` > `Validate On Save` > `Edit Configuration File`. Changes might or might not remain after updating the bundle, I don't know yet.
 
-Growl notifications use the `growlnotify` command line tool, which is available as an Extra on the Growl DMG image.
+Updating
+--------
 
+If you installed via the recommended method above by running `git clone...`, you can easily update the bundle via `Bundles` > `Validate On Save` > `Update Bundle`.
 
 Caveats
 -------
