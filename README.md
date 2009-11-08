@@ -13,4 +13,12 @@ Remember:
   8. switching back to the browser
   9. refreshing?
 
-This bundle lets you skips several.
+This bundle lets you skips several of those steps.
+
+Supported Languages
+-------------------
+
+  * Ruby
+  * PHP
+  * JavaScript
+  * Compass (still a bit buggy) 
