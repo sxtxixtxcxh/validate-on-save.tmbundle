@@ -57,7 +57,7 @@ The Compass "validation" actually compiles your SASS files and returns any error
 
 If you are using a standalone Compass project, it depends on being able to find your config.rb file in either the same directory as your SASS files *or* in one any of the parent directories. 
 
-If you're using Compass with Rails it runs `compass --update` on your Rails root directory (as determined by the parent of the "app" directory).
+If you're using Compass with Rails it runs `compass --update` on your Rails root directory, as determined by the parent of the "app" or "public" directory. This means your SASS files must be descendants of one of those directories. Compass, by default, installs into #{RAILS_ROOT}/app/stylesheets/
 
 ### CSS Validation
 
