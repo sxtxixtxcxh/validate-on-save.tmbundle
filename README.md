@@ -39,6 +39,7 @@ Installing via Git will allow you to keep up to date with the `Bundles` > `Valid
 
 If you don't have Git and downloaded this from Github (really? you don't have Git?), after you've unzipped or untarred, you'll have to rename the folder from `sxtxixtxcxh-validate-on-save.tmbundle-#{HASH}` to `Validate On Save.tmbundle`. Double click and TextMate should install it for you.
 
+
 Configuration
 -------------
 
@@ -77,3 +78,7 @@ If you're using Compass with Rails it runs `compass --update` on your Rails root
 ### CSS Validation
 
 CSS validation is done locally using w3c.org's Jigsaw server. This means it's essentially booting up a java based web server, so it can be relatively slow.
+
+### Licenses
+
+  * JavaScript Lint Based on SpiderMonkey, which is licensed under the MPL/GPL/LGPL tri-license
