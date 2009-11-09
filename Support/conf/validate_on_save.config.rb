@@ -9,7 +9,7 @@ VOS_ONLY_ON_ERROR = false
 VOS_TM_NOTIFY = true
 
 # Use Growl notification
-VOS_GROWL = false
+VOS_GROWL = true
 
 # Jump to line with error
 VOS_JUMP_TO_ERROR = false
