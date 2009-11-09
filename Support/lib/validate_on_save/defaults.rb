@@ -1,3 +1,9 @@
+#
+# To change options, please use TextMate's shell variables.
+# Use the same variable names as the constants below, with
+# a string value of either "true", or "false".
+#
+
 
 # Output validator information
 VOS_VALIDATOR_INFO = false
