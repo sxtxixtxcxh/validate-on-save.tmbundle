@@ -12,8 +12,10 @@ require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
 FILENAME = ENV['TM_FILENAME']
 FILEPATH = ENV['TM_FILEPATH']
 SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
+COMPASS_VALIDATOR_BIN = "#{SUPPORT}/bin/compass_validator.rb"
 
-result = `#{SUPPORT.gsub(' ','\ ')}/bin/compass_validator.rb`
+result = `"#{COMPASS_VALIDATOR_BIN}"`
+
 result.gsub!(/^\s*directory.*?$/, '')
 result.gsub!(/^\s*compile.*?$/, '')
 result.gsub!(/^\s*create.*?$/, '')
