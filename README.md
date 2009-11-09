@@ -83,10 +83,16 @@ CSS validation is done locally using w3c.org's Jigsaw server. This means it's es
 
 ### Licenses
 
-  * `growlnotify` is Copyright (c) The Growl Project, 2004-2009 - see growl_license.txt.
-  * JavaScript Lint Based on SpiderMonkey, which is licensed under the MPL/GPL/LGPL tri-license.
-  * Jigsaw and CSS Validator are distributed under both the [W3C Test Suite License][1] and the [W3C 3-clause BSD License][2]. To contribute to a W3C Test Suite, see the [policies and contribution forms][3].
+  * `growlnotify` is Copyright (c) The Growl Project, 2004-2009 - see [growl_license.txt].
+  * [JavaScript Lint][lint] Based on [SpiderMonkey][smonk], which is licensed under the [MPL][mpl]/[GPL][gpl]/[LGPL][lgpl] tri-license
+  * Jigsaw and CSS Validator are distributed under both the [W3C Test Suite License][test] and the [W3C 3-clause BSD License][bsd]. To contribute to a W3C Test Suite, see the [policies and contribution forms][policy].
 
-[1]: http://www.w3.org/Consortium/Legal/2008/04-testsuite-license
-[2]: http://www.w3.org/Consortium/Legal/2008/03-bsd-license
-[3]: http://www.w3.org/2004/10/27-testcases
+[growl]:  http://github.com/sxtxixtxcxh/validate-on-save.tmbundle/blob/master/Support/bin/growl_license.txt
+[lint]:   http://www.jslint.com/
+[smonk]:  http://www.mozilla.org/js/spidermonkey/
+[mpl]:    http://www.mozilla.org/MPL/MPL-1.1.html
+[gpl]:    http://www.gnu.org/copyleft/gpl.html
+[lgpl]:   http://www.gnu.org/licenses/lgpl.html
+[test]:   http://www.w3.org/Consortium/Legal/2008/04-testsuite-license
+[bsd]:    http://www.w3.org/Consortium/Legal/2008/03-bsd-license
+[policy]: http://www.w3.org/2004/10/27-testcases
