@@ -37,7 +37,24 @@ Installation
 Configuration
 -------------
 
-You can edit some basic output/notification options via `Bundles` > `Validate On Save` > `Edit Configuration File`. Changes might or might not remain after updating the bundle, I don't know yet.
+You can customize how and when VOS (Validate On Save) notifies you. This is done by setting Shell Variables in TextMate (`Textmate` > `Preferences` > `Advanced` > `Shell Variables`).
+
+All variables starting with `VOS_` take values of either "true" or "false".
+
+* VOS_VALIDATOR_INFO (defaults to "false")
+  Outputs information about the validator.
+* VOS_ONLY_ON_ERROR (defaults to "false")
+  Only displays notifications on syntax error. Useful if you don't want to be told repeatedly that everything is OK.
+* VOS_TM_NOTIFY (defaults to "true")
+  Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this.
+* VOS_GROWL (defaults to "true")
+  Use Growl to display the validation result.
+* VOS_JUMP_TO_ERROR (defaults to "false")
+  When a error is found, automatically move the cursor to the line causing the problem.
+* TM_COMPASS
+  If you get an error saying "compass not found" during Compass validation, run `which compass` in a terminal, and put the result as the value of this option to make VOS find your compass binary.
+* TM_GROWLNOTIFY
+  VOS includes the `growlnotify` binary, but if for some reason the included one does not work, you can use this option to specify the path to your own.
 
 
 Updating
