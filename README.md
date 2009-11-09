@@ -81,4 +81,6 @@ CSS validation is done locally using w3c.org's Jigsaw server. This means it's es
 
 ### Licenses
 
+  * `growlnotify` is Copyright (c) The Growl Project, 2004-2009 - see growl_license.txt
   * JavaScript Lint Based on SpiderMonkey, which is licensed under the MPL/GPL/LGPL tri-license
+  * Jigsaw and CSS Validator are distributed under both the <a href="http://www.w3.org/Consortium/Legal/2008/04-testsuite-license">W3C Test Suite License</a> and the <a href="http://www.w3.org/Consortium/Legal/2008/03-bsd-license">W3C 3-clause BSD License</a>. To contribute to a W3C Test Suite, see the <a href="http://www.w3.org/2004/10/27-testcases">policies and contribution forms</a>.
