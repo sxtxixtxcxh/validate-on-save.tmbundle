@@ -41,27 +41,27 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
 
 All variables starting with `VOS_` take values of either "true" or "false".
 
-* `VOS_VALIDATOR_INFO` (defaults to "false")
+*  `VOS_VALIDATOR_INFO` (defaults to "false") 
+   
+   Outputs information about the validator.
 
-  Outputs information about the validator.
+*  `VOS_ONLY_ON_ERROR` (defaults to "false")
 
-* `VOS_ONLY_ON_ERROR` (defaults to "false")
+   Only displays notifications on syntax error. Useful if you don't want to be told repeatedly that everything is OK.
 
-  Only displays notifications on syntax error. Useful if you don't want to be told repeatedly that everything is OK.
+*  `VOS_TM_NOTIFY` (defaults to "true")
 
-* `VOS_TM_NOTIFY` (defaults to "true")
+   Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this.
 
-  Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this.
+*  `VOS_GROWL` (defaults to "true")
 
-* `VOS_GROWL` (defaults to "true")
+   Use Growl to display the validation result.
 
-  Use Growl to display the validation result.
+*  `VOS_JUMP_TO_ERROR` (defaults to "false")
 
-* `VOS_JUMP_TO_ERROR` (defaults to "false")
+   When a error is found, automatically move the cursor to the line causing the problem.
 
-  When a error is found, automatically move the cursor to the line causing the problem.
-
-* `TM_COMPASS`
+*  `TM_COMPASS`
 
   If you get an error saying "compass not found" during Compass validation, run `which compass` in a terminal, and put the result as the value of this option to make VOS find your compass binary.
 
