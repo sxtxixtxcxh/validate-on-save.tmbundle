@@ -30,9 +30,7 @@ validate_on_save({
   :match_ok =&gt; /^$/,
   :match_line =&gt; /^(\d+):\s/i,
   :lang =&gt; "SASS"
-}) do |result|
-  result.gsub!("'","\\\\'")
-end</string>
+})</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

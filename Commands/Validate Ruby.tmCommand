@@ -17,10 +17,7 @@ validate_on_save({
   :match_ok =&gt; /Syntax OK/i,
   :match_line =&gt; /line (\d+)/i,
   :lang =&gt; "Ruby"
-}) do |result|
-  result.gsub!("\`","\\\\`")
-end
-</string>
+})</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
