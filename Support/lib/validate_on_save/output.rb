@@ -25,10 +25,8 @@ class VOS
     else
       yield(result) if block_given?
       puts info + result if opt("VOS_TM_NOTIFY")
-  `cat <<-EOT | "#{GROWL_BIN}" -p 'Emergency' -n 'Textmate Syntax Check' -t "#{lang} Syntax Check" -a "Textmate"
-  #{result}
-  EOT
-      ` if opt("VOS_GROWL")
+      `cat <<-EOT | "#{GROWL_BIN}" -p 'Emergency' -n 'Textmate Syntax Check' -t "#{lang} Syntax Check" -a "Textmate"
+      #{result}` if opt("VOS_GROWL")
       TextMate.go_to :line => $1 if result =~ match_line && opt("VOS_JUMP_TO_ERROR")
     end
   end
