@@ -47,13 +47,13 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
 
 All variables starting with `VOS_` take values of either "true" or "false".
 
-*  `VOS_VALIDATOR_INFO`: Outputs information about the validator. (defaults to "false")
-*  `VOS_ONLY_ON_ERROR`: Only displays notifications on syntax error. Useful if you don't want to be told repeatedly that everything is OK. (defaults to "false")
-*  `VOS_TM_NOTIFY`: Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this. (defaults to "true")
-*  `VOS_GROWL`: Use Growl to display the validation result. (defaults to "true")
-*  `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
-*  `TM_COMPASS`: If you get an error saying "compass not found" during Compass validation, run `which compass` in a terminal, and put the result as the value of this option to make VOS find your compass binary.
-* `TM_GROWLNOTIFY`: VOS includes the `growlnotify` binary, but if for some reason the included one does not work, you can use this option to specify the path to your own.
+  * `VOS_VALIDATOR_INFO`: Outputs information about the validator. (defaults to "false")
+  * `VOS_ONLY_ON_ERROR`: Only displays notifications on syntax error. Useful if you don't want to be told repeatedly that everything is OK. (defaults to "false")
+  * `VOS_TM_NOTIFY`: Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this. (defaults to "true")
+  * `VOS_GROWL`: Use Growl to display the validation result. (defaults to "true")
+  * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
+  * `TM_COMPASS`: If you get an error saying "compass not found" during Compass validation, run `which compass` in a terminal, and put the result as the value of this option to make VOS find your compass binary.
+  * `TM_GROWLNOTIFY`: VOS includes the `growlnotify` binary, but if for some reason the included one does not work, you can use this option to specify the path to your own.
 
 
 Updating
@@ -65,7 +65,9 @@ If you installed via the recommended method above by running `git clone...`, you
 Caveats
 -------
 
-This is a very early release, so it *might* not work out so well for you. Feel free to let me know at [sxtxixtxcxh@gmail.com](mailto:sxtxixtxcxh@gmail.com).
+This is a very early release, so it *might* not work out so well for you. Feel free to let me know at [sxtxixtxcxh@gmail.com][1].
+
+[1]: mailto:sxtxixtxcxh@gmail.com
 
 ### Compass Validation
 
@@ -81,6 +83,10 @@ CSS validation is done locally using w3c.org's Jigsaw server. This means it's es
 
 ### Licenses
 
-  * `growlnotify` is Copyright (c) The Growl Project, 2004-2009 - see growl_license.txt
-  * JavaScript Lint Based on SpiderMonkey, which is licensed under the MPL/GPL/LGPL tri-license
-  * Jigsaw and CSS Validator are distributed under both the <a href="http://www.w3.org/Consortium/Legal/2008/04-testsuite-license">W3C Test Suite License</a> and the <a href="http://www.w3.org/Consortium/Legal/2008/03-bsd-license">W3C 3-clause BSD License</a>. To contribute to a W3C Test Suite, see the <a href="http://www.w3.org/2004/10/27-testcases">policies and contribution forms</a>.
+  * `growlnotify` is Copyright (c) The Growl Project, 2004-2009 - see growl_license.txt.
+  * JavaScript Lint Based on SpiderMonkey, which is licensed under the MPL/GPL/LGPL tri-license.
+  * Jigsaw and CSS Validator are distributed under both the [W3C Test Suite License][1] and the [W3C 3-clause BSD License][2]. To contribute to a W3C Test Suite, see the [policies and contribution forms][3].
+
+[1]: http://www.w3.org/Consortium/Legal/2008/04-testsuite-license
+[2]: http://www.w3.org/Consortium/Legal/2008/03-bsd-license
+[3]: http://www.w3.org/2004/10/27-testcases
