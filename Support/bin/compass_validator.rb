@@ -1,9 +1,8 @@
 #!/usr/bin/env ruby
 FILEPATH = ENV['TM_FILEPATH']
 PATHS = File.dirname(FILEPATH).split('/');
-compass_root = FILEPATH.split("/app/")[0]
+compass_root = FILEPATH.split("/app/")[0] || FILEPATH.split("/public/")[0]
 
-dir = ''
 PATHS.reverse.each do |path|
   dir = PATHS[0,PATHS.index(path)+1].join('/')
   unless dir.empty?
