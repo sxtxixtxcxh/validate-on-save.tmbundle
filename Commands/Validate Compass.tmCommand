@@ -25,7 +25,7 @@ result.gsub!(/^\s*unchanged.*?$/, '')
 result.gsub!(/^\s*identical.*?$/, '')
 result.strip!()
 
-validate_on_save({
+VOS.output({
   :result =&gt; result,
   :match_ok =&gt; /^$/,
   :match_line =&gt; /^(\d+):\s/i,

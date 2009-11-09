@@ -13,7 +13,7 @@ CSS_VALIDATOR_BIN = "#{ENV['TM_BUNDLE_SUPPORT']}/bin/css_validator.rb"
 
 TM_RUBY = ENV['TM_RUBY'] ||= "ruby"
 
-validate_on_save({
+VOS.output({
   :info =&gt; "Running syntax check...\n",
   :result =&gt; `"#{CSS_VALIDATOR_BIN}"`,
   :match_ok =&gt; /Congratulations! No Error Found./i,

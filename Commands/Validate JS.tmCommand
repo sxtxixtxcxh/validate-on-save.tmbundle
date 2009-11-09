@@ -14,7 +14,7 @@ FILEPATH = ENV['TM_FILEPATH']
 SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
 BINARY   = "#{SUPPORT}/bin/jsl"
 
-validate_on_save({
+VOS.output({
   :info =&gt; "Running syntax check with JavaScript Lint\n",
   :result =&gt; `"#{BINARY}" -process "#{FILEPATH}" -nologo -conf "#{SUPPORT}/conf/jsl.textmate.conf"`.gsub!(FILENAME, '').strip(),
   :match_ok =&gt; /0 error\(s\)\, 0 warning\(s\)/i,
