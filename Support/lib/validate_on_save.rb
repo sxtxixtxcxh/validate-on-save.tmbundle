@@ -18,7 +18,10 @@ def validate_on_save(options = {})
   else
     yield(result) if block_given?
     puts info + result if VOS_TM_NOTIFY
-    `"#{GROWL_BIN}" -p 'Emergency' -m '#{result}' -n 'Textmate Syntax Check' -t "#{lang} Syntax Check" -a "Textmate"` if VOS_GROWL
+`cat <<-EOT | "#{GROWL_BIN}" -p 'Emergency' -n 'Textmate Syntax Check' -t "#{lang} Syntax Check" -a "Textmate"
+#{result}
+EOT
+    ` if VOS_GROWL
     TextMate.go_to :line => $1 if result =~ match_line && VOS_JUMP_TO_ERROR
   end
 end
