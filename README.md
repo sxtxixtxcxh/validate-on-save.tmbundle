@@ -65,9 +65,10 @@ If you installed via the recommended method above by running `git clone...`, you
 Caveats
 -------
 
-This is a very early release, so it *might* not work out so well for you. Feel free to let me know at [sxtxixtxcxh@gmail.com][1].
+This is a very early release, so it *might* not work out so well for you. Feel free to let me know at [sxtxixtxcxh@gmail.com][1] or [on twitter][2].
 
 [1]: mailto:sxtxixtxcxh@gmail.com
+[2]: http://twitter.com/sxtxixtxcxh
 
 ### Compass Validation
 
