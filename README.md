@@ -30,10 +30,11 @@ Installation
 ------------
 
 Follow these instructions if you have Git installed:
-
-    $ cd ~/Library/Application\ Support/TextMate/Bundles/
-    $ git clone git://github.com/sxtxixtxcxh/validate-on-save.tmbundle.git "Validate On Save.tmbundle"
-    $ osascript -e 'tell app "TextMate" to reload bundles'
+    
+    mkdir -p ~/Library/Application\ Support/TextMate/Bundles/; #just in case you don't have the folder yet
+    cd ~/Library/Application\ Support/TextMate/Bundles/;
+    git clone git://github.com/sxtxixtxcxh/validate-on-save.tmbundle.git "Validate On Save.tmbundle";
+    osascript -e 'tell app "TextMate" to reload bundles';
     
 Installing via Git will allow you to keep up to date with the `Bundles` > `Validate On Save` > `Update Bundle` menu command.
 
