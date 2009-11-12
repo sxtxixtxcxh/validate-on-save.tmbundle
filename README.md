@@ -83,9 +83,13 @@ If you're using Compass with Rails it runs `compass --update` on your Rails root
 
 CSS validation is done locally using w3c.org's Jigsaw server. This means it's essentially booting up a java based web server, so it can be relatively slow.
 
-### Licenses
 
-  * `growlnotify` is Copyright (c) The Growl Project, 2004-2009 - see [growl_license.txt].
+Licenses
+--------
+
+Validate On Save is released under the MIT License. Included third-party software are limited to their respective licenses.
+
+  * `growlnotify` is Copyright (c) The Growl Project, 2004-2009 - see [growl_license.txt][growl].
   * [JavaScript Lint][lint] Based on [SpiderMonkey][smonk], which is licensed under the [MPL][mpl]/[GPL][gpl]/[LGPL][lgpl] tri-license
   * Jigsaw and CSS Validator are distributed under both the [W3C Test Suite License][test] and the [W3C 3-clause BSD License][bsd]. To contribute to a W3C Test Suite, see the [policies and contribution forms][policy].
 
