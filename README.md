@@ -83,6 +83,10 @@ If you're using Compass with Rails it runs `compass --update` on your Rails root
 
 CSS validation is done locally using w3c.org's Jigsaw server. This means it's essentially booting up a java based web server, so it can be relatively slow.
 
+Credits
+-------
+
+Many thanks to [jimeh](http://github.com/jimeh/) for refusing to accept my messy code.
 
 Licenses
 --------
