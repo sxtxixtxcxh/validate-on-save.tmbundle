@@ -13,11 +13,11 @@ SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
 PYTHON_VALIDATOR = "#{SUPPORT}/bin/python_validator.rb"
 
 VOS.output({
-  :info => `echo "SPyFlakes - #{ENV['VOS_PYFLAKES']}"`,
-  :result => `"#{PYTHON_VALIDATOR}"`,
-  :match_ok => /^$/,
-  :match_line => /line (\d+)/i,
-  :lang => "Python"
+  :info =&gt; `echo "SPyFlakes - #{ENV['VOS_PYFLAKES']}"`,
+  :result =&gt; `"#{PYTHON_VALIDATOR}"`,
+  :match_ok =&gt; /^$/,
+  :match_line =&gt; /line (\d+)/i,
+  :lang =&gt; "Python"
 }) if ENV['VOS_PYFLAKES']</string>
 	<key>input</key>
 	<string>document</string>
