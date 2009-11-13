@@ -18,7 +18,7 @@ VOS.output({
   :match_ok =&gt; /^$/,
   :match_line =&gt; /line (\d+)/i,
   :lang =&gt; "Python"
-}) if ENV['VOS_PYFLAKES']</string>
+}) if ENV['TM_PYFLAKES']</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
