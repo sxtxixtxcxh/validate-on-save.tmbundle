@@ -55,6 +55,7 @@ All variables starting with `VOS_` take values of either "true" or "false".
   * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
   * `TM_COMPASS`: If you get an error saying "compass not found" during Compass validation, run `which compass` in a terminal, and put the result as the value of this option to make VOS find your compass binary.
   * `TM_GROWLNOTIFY`: VOS includes the `growlnotify` binary, but if for some reason the included one does not work, you can use this option to specify the path to your own.
+  * `TM_PYFLAKES`: If you want to validate Python, you'll need to install PyFlakes (the easiest method is to use macports). Set this variable to the path to the pyflakes binary. 
 
 
 Updating
