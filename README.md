@@ -23,6 +23,7 @@ Supported Languages
   * PHP
   * CSS
   * JavaScript
+  * Python (using PyFlakes)
   * Compass (still a bit buggy)
 
 
