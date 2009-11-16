@@ -29,14 +29,14 @@ VOS.output({
   :result =&gt; result,
   :match_ok =&gt; /^$/,
   :match_line =&gt; /^(\d+):\s/i,
-  :lang =&gt; "SASS"
+  :lang =&gt; "Sass"
 })</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
-	<string>Validate Compass</string>
+	<string>Validate Sass</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
