@@ -10,26 +10,27 @@
 require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
 
-TM_PHP = ENV['TM_PHP'] ||= "php"
+
+HAML = ENV['TM_HAML'] ||= "haml"
 
 VOS.output({
-  :info =&gt; "Running syntax check with " + %x{'php' -v}.split[0..2].join(' ') + "\n",
-  :result =&gt; `"#{TM_PHP}" -d display_errors=on -l`.gsub('in -', ''),
-  :match_ok =&gt; /^No syntax errors detected/i,
+  :info =&gt; "Running syntax check with "+ `#{HAML} --version`,
+  :result =&gt; `"#{HAML}" -c 2&gt;&amp;1`,
+  :match_ok =&gt; /Syntax OK/i,
   :match_line =&gt; /line (\d+)/i,
-  :lang =&gt; "PHP"
+  :lang =&gt; "Haml"
 })</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
-	<string>Validate PHP</string>
+	<string>Validate Haml</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>text.haml</string>
 	<key>uuid</key>
-	<string>5C4ABB28-6E89-43BF-8514-1E43CDBB2E22</string>
+	<string>1F48EAC4-2186-4517-8180-DE8B02D40D2C</string>
 </dict>
 </plist>

@@ -5,7 +5,9 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>cd "$TM_BUNDLE_PATH"
+	<string>#!/bin/sh
+
+cd "$TM_BUNDLE_PATH"
 
 echo "&lt;pre&gt;"
 [ -d ".git" ] &amp;&amp; git pull

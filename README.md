@@ -19,12 +19,13 @@ This bundle lets you skips several of those steps.
 Supported Languages
 -------------------
 
-  * Ruby
-  * PHP
   * CSS
+  * Haml
   * JavaScript
+  * PHP
   * Python (using PyFlakes)
-  * Compass (still a bit buggy)
+  * Ruby
+  * Sass/Compass (still a bit buggy)
 
 
 Installation
