@@ -13,8 +13,8 @@ require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
 TM_RUBY = ENV['TM_RUBY'] ||= "ruby"
 
 VOS.output({
-  :info =&gt; `"${TM_RUBY}" -e'puts "Running syntax check with ruby-" + RUBY_VERSION.to_s'`,
-  :result =&gt; `"${TM_RUBY}" -wc 2&gt;&amp;1`.gsub(/\-\:([0-9]+)\: /i, 'Line \1: '),
+  :info =&gt; `"#{TM_RUBY}" -e'puts "Running syntax check with ruby-" + RUBY_VERSION.to_s'`,
+  :result =&gt; `"#{TM_RUBY}" -wc 2&gt;&amp;1`.gsub(/\-\:([0-9]+)\: /i, 'Line \1: '),
   :match_ok =&gt; /Syntax OK/i,
   :match_line =&gt; /line (\d+)/i,
   :lang =&gt; "Ruby"
