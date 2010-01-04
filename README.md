@@ -4,7 +4,7 @@ Validate On Save
 Hey! Remember:
 
   1. Saving.
-  2. Switching to your browser.
+  2. Switching to your browser (or attempting to compile/run).
   3. Refreshing.
   4. Finding out you had a syntax error in your source code.
   5. Switching back to TextMate.
@@ -78,9 +78,9 @@ This is a very early release, so it *might* not work out so well for you. Feel f
 
 The Compass "validation" actually compiles your SASS files and returns any errors or warnings. 
 
-If you are using a standalone Compass project, it depends on being able to find your config.rb file in either the same directory as your SASS files *or* in one any of the parent directories. 
+If you are using a standalone Compass project, it depends on being able to find your `config.rb` file in either the same directory as your SASS files *or* in one any of the parent directories. 
 
-If you're using Compass with Rails it runs `compass --update` on your Rails root directory, as determined by the parent of the "app" or "public" directory. This means your SASS files must be descendants of one of those directories. Compass, by default, installs into #{RAILS_ROOT}/app/stylesheets/
+If you're using Compass with Rails it runs `compass --update` on your Rails root directory, as determined by the parent of the `app` or `public` directory. This means your SASS files must be descendants of one of those directories. Compass, by default, installs into `#{RAILS_ROOT}/app/stylesheets/`.
 
 ### CSS Validation
 
