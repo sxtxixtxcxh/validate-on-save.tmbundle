@@ -47,9 +47,9 @@ If you don't have Git and downloaded this from Github (really? you don't have Gi
 Configuration
 -------------
 
-You can customize how and when VOS (Validate On Save) notifies you. This is done by setting Shell Variables in TextMate (`Textmate` > `Preferences` > `Advanced` > `Shell Variables`).
+### The `VOS_` Options:
 
-All variables starting with `VOS_` take values of either "true" or "false".
+You can customize how and when VOS (Validate On Save) notifies you. This is done by setting Shell Variables in TextMate (`Textmate` > `Preferences` > `Advanced` > `Shell Variables`). All variables starting with `VOS_` take values of either "true" or "false".
 
   * `VOS_VALIDATOR_INFO`: Outputs information about the validator. (defaults to "false")
   * `VOS_ONLY_ON_ERROR`: Only displays notifications on syntax error. Useful if you don't want to be told repeatedly that everything is OK. (defaults to "false")
@@ -57,11 +57,19 @@ All variables starting with `VOS_` take values of either "true" or "false".
   * `VOS_GROWL`: Use Growl to display the validation result. (defaults to "false")
   * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
   * `VOS_ERL_OUTPUT_TO_TMP`: When validating Erlang, the `.erl` file you are working on needs to be compiled to a `.beam` file to look for any syntax errors. By default when VOS compiles your file, it outputs the resulting compiled beam file to `/tmp` after which it removes it. Set this to false to have the beam file be outout to the same directory as the `.erl` you are working on.
-  * `TM_COMPASS`: If you get an error saying "compass not found" during Compass validation, run `which compass` in a terminal, and put the result as the value of this option to make VOS find your compass binary.
-  * `TM_HAML`: If you get an error saying "haml not found" during HAML validation, run `which haml` in a terminal, and put the result as the value of this option to make VOS find your haml binary.
-  * `TM_GROWLNOTIFY`: VOS includes the `growlnotify` binary, but if for some reason the included one does not work, you can use this option to specify the path to your own.
-  * `TM_PYFLAKES`: If you want to validate Python, you'll need to install PyFlakes (the easiest method is to use macports). Set this variable to the path to the pyflakes binary. 
-  * `TM_ERLC`: Used to specify the path to your `erlc` binary file. TextMate will most likely not find your `erlc` binary on it's own, which means you generally have to specify this variable for Erlang validation to work.
+  
+### Binary Path Options:
+
+These options are used to specify the full path to the executable binaries for the different commands VOS relies upon. With the exception of `TM_GROWLNOTIFY`, all of these must be specified for they're corresponding validator to work.
+
+Regarding `TM_SASS` and `TM_COMPASS`, if the later is set, Sass files will always be validated via Compass, otherwise if only `TM_SASS` is set, all Sass files are validated as standard stand-alone files.
+
+  * `TM_COMPASS`
+  * `TM_ERLC`
+  * `TM_GROWLNOTIFY`
+  * `TM_HAML`
+  * `TM_PYFLAKES`
+  * `TM_SASS`
 
 Updating
 --------
