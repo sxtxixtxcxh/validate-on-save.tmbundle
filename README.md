@@ -69,7 +69,7 @@ These options are used to specify the full path to the executable binaries for t
   * `TM_PYFLAKES`
   * `TM_SASS`
 
-####Regarding `TM_SASS` and `TM_COMPASS`:
+###Regarding `TM_SASS` and `TM_COMPASS`:
 
 If TM_COMPASS is set to 'false', validation is done using the standard Sass binary.
 
