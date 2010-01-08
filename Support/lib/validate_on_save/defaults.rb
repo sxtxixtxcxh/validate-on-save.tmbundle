@@ -19,3 +19,6 @@ VOS_GROWL = false
 
 # Jump to line with error
 VOS_JUMP_TO_ERROR = false
+
+# Erlang compiler outputs to /tmp
+VOS_ERL_OUTPUT_TO_TMP = true

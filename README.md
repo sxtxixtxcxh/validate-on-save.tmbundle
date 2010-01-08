@@ -56,7 +56,9 @@ All variables starting with `VOS_` take values of either "true" or "false".
   * `VOS_TM_NOTIFY`: Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this. (defaults to "true")
   * `VOS_GROWL`: Use Growl to display the validation result. (defaults to "false")
   * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
+  * `VOS_ERL_OUTPUT_TO_TMP`: When validating Erlang, the `.erl` file you are working on needs to be compiled to a `.beam` file to look for any syntax errors. By default when VOS compiles your file, it outputs the resulting compiled beam file to `/tmp` after which it removes it. Set this to false to have the beam file be outout to the same directory as the `.erl` you are working on.
   * `TM_COMPASS`: If you get an error saying "compass not found" during Compass validation, run `which compass` in a terminal, and put the result as the value of this option to make VOS find your compass binary.
+  * `TM_HAML`: If you get an error saying "haml not found" during HAML validation, run `which haml` in a terminal, and put the result as the value of this option to make VOS find your haml binary.
   * `TM_GROWLNOTIFY`: VOS includes the `growlnotify` binary, but if for some reason the included one does not work, you can use this option to specify the path to your own.
   * `TM_PYFLAKES`: If you want to validate Python, you'll need to install PyFlakes (the easiest method is to use macports). Set this variable to the path to the pyflakes binary. 
   * `TM_ERLC`: Used to specify the path to your `erlc` binary file. TextMate will most likely not find your `erlc` binary on it's own, which means you generally have to specify this variable for Erlang validation to work.
