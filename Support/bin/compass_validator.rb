@@ -1,24 +1,18 @@
 #!/usr/bin/env ruby
-FILEPATH = ENV["TM_FILEPATH"]
-PATHS = File.dirname(FILEPATH).split('/');
-COMPASS_BIN = ENV["TM_COMPASS"] ||= "compass"
-compass_root = (split = FILEPATH.split("/app/")).size > 1 ? split[0] : false
+filepath = ENV["TM_FILEPATH"]
+paths = File.dirname(filepath).split('/');
 
-PATHS.reverse.each do |path|
-  dir = PATHS[0,PATHS.index(path)+1].join('/')
-  unless dir.empty?
-    Dir.chdir( dir )
-    unless( Dir.glob('config.rb').empty? )
-      compass_root = dir
-      break
+if ENV["TM_COMPASS"].nil?
+  sass_bin = ENV["TM_SASS"] ||= "sass"
+  puts `"#{sass_bin}" -c "#{filepath}" 2>&1`
+else
+  compass_bin = ENV["TM_COMPASS"] ||= "compass"
+  compass_root = (split = filepath.split("/app/")).size > 1 ? split[0] : false
+  paths.reverse.each do |path|
+    dir = paths[0,paths.index(path)+1].join('/')
+    if !dir.empty? && File.exist?(File.join(dir, 'config.rb'))
+        compass_root = dir and break
     end
   end
+  puts `"#{compass_bin}" --update #{compass_root.gsub(' ','\ ')} 2>&1`
 end
-
-if compass_root
-  result = `"#{COMPASS_BIN}" --update #{compass_root.gsub(' ','\ ')} 2>&1`
-else
-  result = `sass -c "#{FILEPATH}" 2>&1`
-end
-
-puts result
