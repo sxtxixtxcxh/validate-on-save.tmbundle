@@ -62,14 +62,17 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
 
 These options are used to specify the full path to the executable binaries for the different commands VOS relies upon. With the exception of `TM_GROWLNOTIFY`, all of these must be specified for they're corresponding validator to work.
 
-Regarding `TM_SASS` and `TM_COMPASS`, if the later is set, Sass files will always be validated via Compass, otherwise if only `TM_SASS` is set, all Sass files are validated as standard stand-alone files.
-
   * `TM_COMPASS`
   * `TM_ERLC`
   * `TM_GROWLNOTIFY`
   * `TM_HAML`
   * `TM_PYFLAKES`
   * `TM_SASS`
+
+##Regarding `TM_SASS` and `TM_COMPASS`:
+
+If TM_COMPASS is set to 'false', validation is done using the standard Sass binary.
+
 
 Updating
 --------
