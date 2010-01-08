@@ -6,19 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-
-require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-
-HAML = ENV['TM_HAML'] ||= "haml"
-
-VOS.output({
-  :info =&gt; "Running syntax check with "+ `#{HAML} --version`,
-  :result =&gt; `"#{HAML}" -c 2&gt;&amp;1`,
-  :match_ok =&gt; /Syntax OK/i,
-  :match_line =&gt; /line (\d+)/i,
-  :lang =&gt; "Haml"
-})</string>
+VOS::Validate.haml</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

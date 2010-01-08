@@ -6,32 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-
-require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-
-FILENAME = ENV['TM_FILENAME']
-FILEPATH = ENV['TM_FILEPATH']
-SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
-COMPASS_VALIDATOR_BIN = "#{SUPPORT}/bin/compass_validator.rb"
-
-result = `"#{COMPASS_VALIDATOR_BIN}"`
-
-result.gsub!(/^\s*directory.*?$/, '')
-result.gsub!(/^\s*compile.*?$/, '')
-result.gsub!(/^\s*create.*?$/, '')
-result.gsub!(/^\s*overwrite.*?$/, '')
-result.gsub!(/^\s*exists.*?$/, '')
-result.gsub!(/^\s*unchanged.*?$/, '')
-result.gsub!(/^\s*identical.*?$/, '')
-result.strip!()
-
-VOS.output({
-  :result =&gt; result,
-  :match_ok =&gt; /^$/,
-  :match_line =&gt; /^(\d+):\s/i,
-  :lang =&gt; "Sass"
-})</string>
+VOS::Validate.sass</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

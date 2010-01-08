@@ -6,19 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-
-require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-
-TM_PHP = ENV['TM_PHP'] ||= "php"
-
-VOS.output({
-  :info =&gt; "Running syntax check with " + %x{'php' -v}.split[0..2].join(' ') + "\n",
-  :result =&gt; `"#{TM_PHP}" -d display_errors=on -l`.gsub('in -', ''),
-  :match_ok =&gt; /^No syntax errors detected/i,
-  :match_line =&gt; /line (\d+)/i,
-  :lang =&gt; "PHP"
-})</string>
+VOS::Validate.php</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

@@ -6,19 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-
-require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-
-TM_ERLC = ENV['TM_ERLC'] ||= "erlc"
-
-VOS.output({
-  :info =&gt; "",
-  :result =&gt; `"#{TM_ERLC}" "#{ENV['TM_FILEPATH']}"`,
-  :match_ok =&gt; /^$/i,
-  :match_line =&gt; /.*?#{Regexp.escape(ENV['TM_FILENAME'])}\:(\d+)\:.*/i,
-  :lang =&gt; "Erlang"
-})</string>
+VOS::Validate.erlang</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

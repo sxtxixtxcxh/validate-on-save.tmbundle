@@ -1,13 +1,5 @@
 class VOS
 
-  def self.opt(key)
-    if ENV.has_key?(key)
-      return (ENV[key] == "true") ? true : false
-    else
-      return key.constantize
-    end
-  end
-
   def self.output(options = {})
     info = options[:info] ||= ""
     info = "" if !opt("VOS_VALIDATOR_INFO")

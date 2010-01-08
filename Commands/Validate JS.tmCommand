@@ -6,22 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-
-require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-
-FILENAME = ENV['TM_FILENAME']
-FILEPATH = ENV['TM_FILEPATH']
-SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
-BINARY   = "#{SUPPORT}/bin/jsl"
-
-VOS.output({
-  :info =&gt; "Running syntax check with JavaScript Lint\n",
-  :result =&gt; `"#{BINARY}" -process "#{FILEPATH}" -nologo -conf "#{SUPPORT}/conf/jsl.textmate.conf"`.gsub!(FILENAME, '').strip(),
-  :match_ok =&gt; /0 error\(s\)\, 0 warning\(s\)/i,
-  :match_line =&gt; /^(\d+):\s/i,
-  :lang =&gt; "JavaScript"
-})</string>
+VOS::Validate.javascript</string>
 	<key>fallbackInput</key>
 	<string>scope</string>
 	<key>input</key>

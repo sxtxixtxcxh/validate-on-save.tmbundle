@@ -6,20 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-
-require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-
-SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
-PYTHON_VALIDATOR = "#{SUPPORT}/bin/python_validator.rb"
-
-VOS.output({
-  :info =&gt; `echo "SPyFlakes - #{ENV['VOS_PYFLAKES']}"`,
-  :result =&gt; `"#{PYTHON_VALIDATOR}"`,
-  :match_ok =&gt; /^$/,
-  :match_line =&gt; /line (\d+)/i,
-  :lang =&gt; "Python"
-}) if ENV['TM_PYFLAKES']</string>
+VOS::Validate.python</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

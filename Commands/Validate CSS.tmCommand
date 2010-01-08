@@ -6,21 +6,8 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-
-require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-
-CSS_VALIDATOR_BIN = "#{ENV['TM_BUNDLE_SUPPORT']}/bin/css_validator.rb"
-
-TM_RUBY = ENV['TM_RUBY'] ||= "ruby"
-
-VOS.output({
-  :info =&gt; "Running syntax check...\n",
-  :result =&gt; `"#{CSS_VALIDATOR_BIN}"`,
-  :match_ok =&gt; /Congratulations! No Error Found./i,
-  :match_line =&gt; /line \: (\d+)/i,
-  :lang =&gt; "CSS"
-})</string>
+VOS::Validate.css</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
