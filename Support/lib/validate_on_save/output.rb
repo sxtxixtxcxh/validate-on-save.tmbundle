@@ -23,9 +23,4 @@ class VOS
     end
   end
   
-  def self.bugreport()
-    require "#{ENV['TM_SUPPORT_PATH']}/lib/browser"
-    Browser.load_url('http://github.com/sxtxixtxcxh/validate-on-save.tmbundle/issues')
-  end
-  
 end
