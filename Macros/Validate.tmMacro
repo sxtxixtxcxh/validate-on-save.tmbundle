@@ -8,7 +8,7 @@
 			<key>argument</key>
 			<dict>
 				<key>beforeRunningCommand</key>
-				<string>saveActiveFile</string>
+				<string>nop</string>
 				<key>command</key>
 				<string>#!/usr/bin/env ruby
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
@@ -49,11 +49,15 @@ VOS.validate</string>
 			<string>executeCommandWithOptions:</string>
 		</dict>
 	</array>
+	<key>keyEquivalent</key>
+	<string>@s</string>
 	<key>name</key>
 	<string>Validate</string>
 	<key>scope</key>
 	<string>source.css, source.erlang, source.ruby, text.haml, source.js, source.prototype.js, source.php, source.python, source.sass</string>
+	<key>useGlobalClipboard</key>
+	<true/>
 	<key>uuid</key>
-	<string>3405A4F7-3C52-4422-B24C-4E347B6C03A2</string>
+	<string>C27D37A8-04F3-4A14-AA3E-0D0F4A92C7F6</string>
 </dict>
 </plist>

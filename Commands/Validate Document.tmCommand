@@ -10,14 +10,10 @@ require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
 VOS.validate</string>
 	<key>input</key>
 	<string>document</string>
-	<key>keyEquivalent</key>
-	<string>@s</string>
 	<key>name</key>
 	<string>Validate Document</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
-	<key>scope</key>
-	<string>source.css, source.erlang, source.ruby, text.haml, source.js, source.prototype.js, source.php, source.python, source.sass</string>
 	<key>uuid</key>
 	<string>A680AD98-19F4-49FD-9CA0-FBD368626779</string>
 </dict>
