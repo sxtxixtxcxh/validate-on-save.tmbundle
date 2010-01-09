@@ -6,14 +6,7 @@
 	<dict>
 		<key>items</key>
 		<array>
-			<string>003C16AB-C2FD-4AB8-99E2-A7B22C126626</string>
-			<string>33995B55-507A-4F3B-839E-70D0A298DC9E</string>
-			<string>1F48EAC4-2186-4517-8180-DE8B02D40D2C</string>
-			<string>079F7B17-51B5-4C09-8577-77D6A0D827F2</string>
-			<string>5C4ABB28-6E89-43BF-8514-1E43CDBB2E22</string>
-			<string>E1B0ADB9-99C8-4086-8248-70D2495B940D</string>
-			<string>83B5DB3E-BA86-41ED-9BDE-7E5B702E4123</string>
-			<string>E2ED0198-DB97-45B5-84BA-AD2D01B31D2F</string>
+			<string>A680AD98-19F4-49FD-9CA0-FBD368626779</string>
 			<string>------------------------------------</string>
 			<string>EFEF4593-F449-4B19-B681-D064B3925FE4</string>
 			<string>7B2D1CC9-D708-487F-9DB9-1111AD9913EB</string>
@@ -25,14 +18,7 @@
 	<string>Validate On Save</string>
 	<key>ordering</key>
 	<array>
-		<string>003C16AB-C2FD-4AB8-99E2-A7B22C126626</string>
-		<string>33995B55-507A-4F3B-839E-70D0A298DC9E</string>
-		<string>1F48EAC4-2186-4517-8180-DE8B02D40D2C</string>
-		<string>079F7B17-51B5-4C09-8577-77D6A0D827F2</string>
-		<string>5C4ABB28-6E89-43BF-8514-1E43CDBB2E22</string>
-		<string>E1B0ADB9-99C8-4086-8248-70D2495B940D</string>
-		<string>83B5DB3E-BA86-41ED-9BDE-7E5B702E4123</string>
-		<string>E2ED0198-DB97-45B5-84BA-AD2D01B31D2F</string>
+		<string>A680AD98-19F4-49FD-9CA0-FBD368626779</string>
 		<string>EFEF4593-F449-4B19-B681-D064B3925FE4</string>
 		<string>7B2D1CC9-D708-487F-9DB9-1111AD9913EB</string>
 	</array>
