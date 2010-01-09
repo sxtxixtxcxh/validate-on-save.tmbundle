@@ -33,12 +33,14 @@ class VOS
       :javascript => { :is => /source\.js|source\.prototype\.js/, :not => /source\.js\.embedded\.html/ },
       :php => { :is => /source\.php/ },
       :python => { :is => /source\.python/ },
+      :erb => { :is => /text\.html\.ruby|text\.html source\.ruby/ },
       :ruby => { :is => /source\.ruby/, :not => /source\.ruby\.embedded/ },
       :sass => { :is => /source\.sass/ }
     }
     scopes.each do |lang, match|
       if scope =~ match[:is] && (!match.has_key?(:not) || !(scope =~ match[:not]))
         Validate.send(lang)
+        break
       end
     end
   end

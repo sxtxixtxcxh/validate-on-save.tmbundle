@@ -54,7 +54,7 @@ VOS.validate</string>
 	<key>name</key>
 	<string>Validate</string>
 	<key>scope</key>
-	<string>source.css, source.erlang, source.ruby, text.haml, source.js, source.prototype.js, source.php, source.python, source.sass</string>
+	<string>source.css, source.erlang, source.ruby, text.haml, text.html.ruby, source.js, source.prototype.js, source.php, source.python, source.sass</string>
 	<key>useGlobalClipboard</key>
 	<true/>
 	<key>uuid</key>
