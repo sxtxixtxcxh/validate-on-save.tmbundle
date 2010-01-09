@@ -11,7 +11,7 @@ VOS.trim</string>
 	<key>fallbackInput</key>
 	<string>document</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>document</string>
 	<key>name</key>
 	<string>Remove Trailing Whitespaces</string>
 	<key>output</key>

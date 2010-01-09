@@ -16,7 +16,7 @@ VOS.trim</string>
 				<key>fallbackInput</key>
 				<string>document</string>
 				<key>input</key>
-				<string>selection</string>
+				<string>document</string>
 				<key>name</key>
 				<string>Remove Trailing Whitespaces</string>
 				<key>output</key>
@@ -55,9 +55,7 @@ VOS.validate</string>
 	<string>Validate</string>
 	<key>scope</key>
 	<string>source.css, source.erlang, source.ruby, text.haml, text.html, text.html.ruby, source.js, source.prototype.js, source.php, source.python, source.sass</string>
-	<key>useGlobalClipboard</key>
-	<true/>
 	<key>uuid</key>
-	<string>C27D37A8-04F3-4A14-AA3E-0D0F4A92C7F6</string>
+	<string>A1835C62-5964-4C3B-A4EC-5B251EFC4587</string>
 </dict>
 </plist>
