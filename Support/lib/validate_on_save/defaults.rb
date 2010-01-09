@@ -23,5 +23,8 @@ VOS_JUMP_TO_ERROR = false
 # Remove trailing whitespaces from non-empty lines
 VOS_TRIM_LINES = false
 
+# Remove trailing whitespaces and new lines from end of document
+VOS_TRIM_DOCUMENT = false
+
 # Erlang compiler outputs to /tmp
 VOS_ERL_OUTPUT_TO_TMP = true
