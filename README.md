@@ -57,21 +57,30 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
   * `VOS_GROWL`: Use Growl to display the validation result. (defaults to "false")
   * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
   * `VOS_ERL_OUTPUT_TO_TMP`: When validating Erlang, the `.erl` file you are working on needs to be compiled to a `.beam` file to look for any syntax errors. By default when VOS compiles your file, it outputs the resulting compiled beam file to `/tmp` after which it removes it. Set this to false to have the beam file be outout to the same directory as the `.erl` you are working on.
+  * `VOS_TRIM_LINES`: Remove any space or tab characters from the end of every non-empty line. For details, see the "Remove Trailing Whitespaces" second below. (defaults to "false")
   
 ### Binary Path Options:
 
-These options are used to specify the full path to the executable binaries for the different commands VOS relies upon. With the exception of `TM_GROWLNOTIFY`, all of these must be specified for they're corresponding validator to work.
+These options are used to specify the full path to the executable binaries for the different commands VOS relies upon. With the exception of `TM_GROWLNOTIFY`, `TM_RUBY`, and `TM_ERB`, all of these must be specified for they're corresponding validator to work.
 
   * `TM_COMPASS`
+  * `TM_ERB`
   * `TM_ERLC`
   * `TM_GROWLNOTIFY`
   * `TM_HAML`
   * `TM_PYFLAKES`
+  * `TM_RUBY`
   * `TM_SASS`
 
-###Regarding `TM_SASS` and `TM_COMPASS`:
+### Regarding `TM_SASS` and `TM_COMPASS`:
 
-If TM_COMPASS is set to 'false', validation is done using the standard Sass binary.
+If `TM_COMPASS` is set to "false", validation is done using the standard Sass binary.
+
+### Remove Trailing Whitespaces
+
+When the `VOS_TRIM_LINES` option is enabled, VOS will automatically remove any trailing space or tab characters for every non-empty line, that means any line that has other characters than space, tab, or newline (`\S` in regex). Blank lines, or lines with only spaces/tabs are left intact.
+
+This feature was original inspired by [this][ch] article.
 
 
 Updating
@@ -90,9 +99,9 @@ This is a very early release, so it *might* not work out so well for you. Feel f
 
 ### Compass Validation
 
-The Compass "validation" actually compiles your SASS files and returns any errors or warnings. 
+The Compass "validation" actually compiles your SASS files and returns any errors or warnings.
 
-If you are using a standalone Compass project, it depends on being able to find your `config.rb` file in either the same directory as your SASS files *or* in one any of the parent directories. 
+If you are using a standalone Compass project, it depends on being able to find your `config.rb` file in either the same directory as your SASS files *or* in one any of the parent directories.
 
 If you're using Compass with Rails it runs `compass --update` on your Rails root directory, as determined by the parent of the `app` or `public` directory. This means your SASS files must be descendants of one of those directories. Compass, by default, installs into `#{RAILS_ROOT}/app/stylesheets/`.
 
@@ -123,3 +132,4 @@ Validate On Save is released under the MIT License. Included third-party softwar
 [test]:   http://www.w3.org/Consortium/Legal/2008/04-testsuite-license
 [bsd]:    http://www.w3.org/Consortium/Legal/2008/03-bsd-license
 [policy]: http://www.w3.org/2004/10/27-testcases
+[ch]:     http://www.codinghorror.com/blog/archives/001310.html
