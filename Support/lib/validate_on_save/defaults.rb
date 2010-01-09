@@ -20,5 +20,8 @@ VOS_GROWL = false
 # Jump to line with error
 VOS_JUMP_TO_ERROR = false
 
+# Remove trailing whitespaces from non-empty lines
+VOS_TRIM_LINES = false
+
 # Erlang compiler outputs to /tmp
 VOS_ERL_OUTPUT_TO_TMP = true

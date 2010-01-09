@@ -4,9 +4,14 @@
 <dict>
 	<key>mainMenu</key>
 	<dict>
+		<key>excludedItems</key>
+		<array>
+			<string>3405A4F7-3C52-4422-B24C-4E347B6C03A2</string>
+		</array>
 		<key>items</key>
 		<array>
 			<string>A680AD98-19F4-49FD-9CA0-FBD368626779</string>
+			<string>82695383-E90D-4754-997C-67AEF28C5782</string>
 			<string>------------------------------------</string>
 			<string>EFEF4593-F449-4B19-B681-D064B3925FE4</string>
 			<string>7B2D1CC9-D708-487F-9DB9-1111AD9913EB</string>
@@ -18,7 +23,9 @@
 	<string>Validate On Save</string>
 	<key>ordering</key>
 	<array>
+		<string>3405A4F7-3C52-4422-B24C-4E347B6C03A2</string>
 		<string>A680AD98-19F4-49FD-9CA0-FBD368626779</string>
+		<string>82695383-E90D-4754-997C-67AEF28C5782</string>
 		<string>EFEF4593-F449-4B19-B681-D064B3925FE4</string>
 		<string>7B2D1CC9-D708-487F-9DB9-1111AD9913EB</string>
 	</array>
