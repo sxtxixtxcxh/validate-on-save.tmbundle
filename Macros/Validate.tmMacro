@@ -20,7 +20,7 @@ VOS.trim</string>
 				<key>name</key>
 				<string>Remove Trailing Whitespaces</string>
 				<key>output</key>
-				<string>replaceSelectedText</string>
+				<string>replaceDocument</string>
 				<key>uuid</key>
 				<string>82695383-E90D-4754-997C-67AEF28C5782</string>
 			</dict>
@@ -54,7 +54,7 @@ VOS.validate</string>
 	<key>name</key>
 	<string>Validate</string>
 	<key>scope</key>
-	<string>source.css, source.erlang, source.ruby, text.haml, text.html, text.html.ruby, source.js, source.prototype.js, source.php, source.python, source.sass</string>
+	<string>source.erlang, source.ruby, text.haml, text.html, text.html.ruby, source.js, source.prototype.js, source.php, source.python, source.sass</string>
 	<key>uuid</key>
 	<string>A1835C62-5964-4C3B-A4EC-5B251EFC4587</string>
 </dict>

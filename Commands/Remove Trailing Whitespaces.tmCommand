@@ -15,7 +15,7 @@ VOS.trim</string>
 	<key>name</key>
 	<string>Remove Trailing Whitespaces</string>
 	<key>output</key>
-	<string>replaceSelectedText</string>
+	<string>replaceDocument</string>
 	<key>uuid</key>
 	<string>82695383-E90D-4754-997C-67AEF28C5782</string>
 </dict>
