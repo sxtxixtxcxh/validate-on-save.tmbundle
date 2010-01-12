@@ -7,18 +7,20 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-VOS.validate</string>
+VOS::Validate.javascript</string>
+	<key>fallbackInput</key>
+	<string>scope</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
-	<string>Validate Document</string>
+	<string>Validate JavaScript</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
-	<string>source.css, source.erlang, source.ruby, text.haml, text.html, text.html.ruby, source.js, source.prototype.js, source.php, source.python, source.sass</string>
+	<string>source.js - source.js.embedded.html, source.prototype.js - source.js.embedded.html</string>
 	<key>uuid</key>
-	<string>A680AD98-19F4-49FD-9CA0-FBD368626779</string>
+	<string>079F7B17-51B5-4C09-8577-77D6A0D827F2</string>
 </dict>
 </plist>

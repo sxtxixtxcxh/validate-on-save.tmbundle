@@ -21,7 +21,7 @@ VOS_GROWL = false
 VOS_JUMP_TO_ERROR = false
 
 # Remove trailing whitespaces from non-empty lines
-VOS_TRIM_LINES = false
+VOS_TRIM_LINES = true
 
 # Remove trailing whitespaces and new lines from end of document
 VOS_TRIM_DOCUMENT = false
