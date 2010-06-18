@@ -17,7 +17,7 @@ VOS::Validate.ruby</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
-	<string>source.ruby - source.ruby.embedded.haml</string>
+	<string>source.ruby - source.ruby.embedded.haml - text.html.ruby</string>
 	<key>uuid</key>
 	<string>83B5DB3E-BA86-41ED-9BDE-7E5B702E4123</string>
 </dict>
