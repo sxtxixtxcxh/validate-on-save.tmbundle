@@ -34,7 +34,7 @@ class VOS
       :php => { :is => /source\.php/ },
       :python => { :is => /source\.python/ },
       :erb => { :is => /text\.html\.ruby|text\.html source\.ruby/ },
-      :ruby => { :is => /source\.ruby/, :not => /source\.ruby\.embedded/ },
+      :ruby => { :is => /source\.ruby/, :not => /source\.ruby\.embedded/|/source\.ruby\.embedded.haml/|/text\.html\.ruby/ },
       :sass => { :is => /source\.sass/ }
     }
     scopes.each do |lang, match|
