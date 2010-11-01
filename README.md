@@ -57,6 +57,7 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
   * `VOS_GROWL`: Use Growl to display the validation result. (defaults to "false")
   * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
   * `VOS_ERL_OUTPUT_TO_TMP`: When validating Erlang, the `.erl` file you are working on needs to be compiled to a `.beam` file to look for any syntax errors. By default when VOS compiles your file, it outputs the resulting compiled beam file to `/tmp` after which it removes it. Set this to false to have the beam file be outout to the same directory as the `.erl` file you are working on. (defaults to "false")
+  * `VOS_CSS_PROFILE`: When to validate css against a specific profile. See [CSS Validator sommand settings][w3ccss] for a list of valid profiles. (defaults to 2.1)
   
 ### Binary Path Options:
 
@@ -106,6 +107,7 @@ Credits
 -------
 
 Many thanks to [jimeh](http://github.com/jimeh/) for refusing to accept my messy code.
+Thanks to [Peter Hillerström](http://peter.vasb.fi/) for the css profile update.
 
 Licenses
 --------
@@ -125,3 +127,4 @@ Validate On Save is released under the MIT License. Included third-party softwar
 [test]:   http://www.w3.org/Consortium/Legal/2008/04-testsuite-license
 [bsd]:    http://www.w3.org/Consortium/Legal/2008/03-bsd-license
 [policy]: http://www.w3.org/2004/10/27-testcases
+[w3ccss]: http://www.codestyle.org/css/tools/W3C-CSS-Validator.shtml#validator-commands
