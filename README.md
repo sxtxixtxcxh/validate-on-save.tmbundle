@@ -34,7 +34,7 @@ Installation
 
 Follow these instructions if you have Git installed:
     
-    mkdir -p ~/Library/Application\ Support/TextMate/Bundles/; #just in case you don't have the folder yet
+    mkdir -p ~/Library/Application\ Support/TextMate/Bundles/; #just in case you are missing the folder
     cd ~/Library/Application\ Support/TextMate/Bundles/;
     git clone git://github.com/sxtxixtxcxh/validate-on-save.tmbundle.git "Validate On Save.tmbundle";
     osascript -e 'tell app "TextMate" to reload bundles';
@@ -106,7 +106,7 @@ CSS validation is done locally using w3c.org's Jigsaw server. This means it's es
 Credits
 -------
 
-Many thanks to [jimeh](http://github.com/jimeh/) for refusing to accept my messy code.
+Many thanks to [jimeh](http://github.com/jimeh/) for refusing to accept my messy code.  
 Thanks to [Peter Hillerström](http://peter.vasb.fi/) for the css profile update.
 
 Licenses
