@@ -23,6 +23,7 @@ Supported Languages
   * Erlang (possibly buggy, compiles *.beam file using erlc)
   * Haml
   * JavaScript
+  * Perl
   * PHP
   * Python (using PyFlakes)
   * Ruby
@@ -68,6 +69,7 @@ These options are used to specify the full path to the executable binaries for t
   * `TM_ERLC`
   * `TM_GROWLNOTIFY`
   * `TM_HAML`
+  * `TM_PERL`
   * `TM_PYFLAKES`
   * `TM_RUBY`
   * `TM_SASS`
