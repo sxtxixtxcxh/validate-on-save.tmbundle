@@ -19,6 +19,7 @@ This bundle lets you skips several of those steps.
 Supported Languages
 -------------------
 
+  * CoffeeScript
   * CSS
   * Erlang (possibly buggy, compiles *.beam file using erlc)
   * Haml
@@ -62,8 +63,9 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
   
 ### Binary Path Options:
 
-These options are used to specify the full path to the executable binaries for the different commands VOS relies upon. With the exception of `TM_GROWLNOTIFY`, `TM_RUBY`, and `TM_ERB`, all of these must be specified for they're corresponding validator to work.
+These options are used to specify the full path to the executable binaries for the different commands VOS relies upon. With the exception of `TM_GROWLNOTIFY`, `TM_RUBY`, `TM_COFFEESCRIPT` and `TM_ERB`, all of these must be specified for their corresponding validator to work.
 
+  * `TM_COFFEESCRIPT`
   * `TM_COMPASS`
   * `TM_ERB`
   * `TM_ERLC`
