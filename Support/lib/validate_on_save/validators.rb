@@ -1,3 +1,4 @@
+require "validate_on_save/validators/coffeescript"
 require "validate_on_save/validators/css"
 require "validate_on_save/validators/erlang"
 require "validate_on_save/validators/erb"

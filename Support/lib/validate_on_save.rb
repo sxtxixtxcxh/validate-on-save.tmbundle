@@ -27,6 +27,7 @@ class VOS
   def self.validate
     scope = ENV["TM_SCOPE"]
     scopes = {
+      :coffeescript => { :is => /source\.coffee/ },
       :css => { :is => /source\.css/ },
       :erlang => { :is => /source\.erlang/ },
       :haml => { :is => /text\.haml/ },
