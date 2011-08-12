@@ -1,4 +1,5 @@
 require ENV['TM_SUPPORT_PATH'] + "/lib/textmate"
+ENV['PATH'] += ":#{ENV['TM_BUNDLE_SUPPORT']}/bin"
 
 $LOAD_PATH << ENV['TM_BUNDLE_SUPPORT'] + "/lib"
 
