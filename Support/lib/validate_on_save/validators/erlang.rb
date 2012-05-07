@@ -4,9 +4,11 @@ class VOS
       erlc_bin = ENV['TM_ERLC'] ||= "erlc"
       tmp = VOS.opt("VOS_ERL_OUTPUT_TO_TMP")
       output = (tmp) ? "-o /tmp" : ""
+      option = "-pa #{ENV['TM_PROJECT_DIRECTORY']}/ebin"
+      option += " -pa #{ENV['TM_PROJECT_DIRECTORY']}/apps/*/ebin"
       VOS.output({
         :info => "",
-        :result => `"#{erlc_bin}" #{output} "#{ENV['TM_FILEPATH']}"`,
+        :result => `"#{erlc_bin}" #{output} #{option} "#{ENV['TM_FILEPATH']}"`,
         :match_ok => /^$/i,
         :match_line => /.*?#{Regexp.escape(ENV['TM_FILENAME'])}\:(\d+)\:.*/i,
         :lang => "Erlang"
