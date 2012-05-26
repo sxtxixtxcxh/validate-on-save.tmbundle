@@ -14,7 +14,7 @@ if ENV["TM_COMPASS"] != "false"
 end
 
 if compass_root
-  puts `"#{compass_bin}" --update #{compass_root.gsub(' ','\ ')} 2>&1`
+  puts `bundle exec #{compass_bin} compile --dry-run #{compass_root.gsub(' ','\ ')} #{filepath} 2>&1`
 else
   sass_bin = ENV["TM_SASS"] ||= "sass"
   puts `"#{sass_bin}" -c "#{filepath}" 2>&1`

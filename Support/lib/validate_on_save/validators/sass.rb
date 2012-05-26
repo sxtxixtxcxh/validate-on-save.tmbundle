@@ -3,14 +3,9 @@ class VOS
     def self.sass
       compass_validator_bin = "#{ENV['TM_BUNDLE_SUPPORT']}/bin/compass_validator.rb"
       result = `"#{compass_validator_bin}"`
-      result.gsub!(/^\s*directory.*?$/, '')
-      result.gsub!(/^\s*compile.*?$/, '')
-      result.gsub!(/^\s*create.*?$/, '')
-      result.gsub!(/^\s*overwrite.*?$/, '')
-      result.gsub!(/^\s*exists.*?$/, '')
-      result.gsub!(/^\s*unchanged.*?$/, '')
-      result.gsub!(/^\s*identical.*?$/, '')
-      result.strip!()
+      result.gsub!(/\[\d{1,2}m/, '') #strip formatting
+      result = result.scan(/error.*\((.*)\)$/).map(&:first).join("\n")
+      
       VOS.output({
         :result => result,
         :match_ok => /^$/,
