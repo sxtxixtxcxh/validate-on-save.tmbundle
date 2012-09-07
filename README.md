@@ -24,12 +24,12 @@ Supported Languages
   * Erlang (possibly buggy, compiles *.beam file using erlc)
   * Haml
   * JavaScript
+  * JSON
   * Perl
   * PHP
   * Python (using PyFlakes)
   * Ruby
   * Sass/Compass (still a bit buggy)
-  * JSON
 
 
 Installation
