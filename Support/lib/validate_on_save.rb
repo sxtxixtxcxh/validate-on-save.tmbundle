@@ -37,7 +37,8 @@ class VOS
       :python => { :is => /source\.python/ },
       :erb => { :is => /text\.html\.ruby|text\.html source\.ruby/ },
       :ruby => { :is => /source\.ruby/, :not => /source\.ruby\.embedded/|/source\.ruby\.embedded.haml/|/text\.html\.ruby/ },
-      :sass => { :is => /source\.sass/ }
+      :sass => { :is => /source\.sass/ },
+      :json => { :is => /source\.json/ }
     }
     scopes.each do |lang, match|
       if scope =~ match[:is] && (!match.has_key?(:not) || !(scope =~ match[:not]))
