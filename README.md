@@ -29,6 +29,7 @@ Supported Languages
   * Python (using PyFlakes)
   * Ruby
   * Sass/Compass (still a bit buggy)
+  * JSON
 
 
 Installation
@@ -80,6 +81,9 @@ These options are used to specify the full path to the executable binaries for t
 
 If `TM_COMPASS` is set to "false", validation is done using the standard Sass binary.
 
+### Regarding `env: ... No such file or directory`
+
+If you haven't already done so, make sure your TextMate `PATH` shell variable includes `/usr/local/bin`.
 
 Updating
 --------
@@ -106,6 +110,10 @@ If you're using Compass with Rails it runs `compass --update` on your Rails root
 ### CSS Validation
 
 CSS validation is done locally using w3c.org's Jigsaw server. This means it's essentially booting up a java based web server, so it can be relatively slow.
+
+### JSON Validation
+
+JSON validation is done using `jsonlint`, which is installable through the Node Package manager `npm`. For installation details, see [jsonlint](https://github.com/zaach/jsonlint).
 
 Credits
 -------
