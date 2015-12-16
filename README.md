@@ -74,12 +74,17 @@ These options are used to specify the full path to the executable binaries for t
   * `TM_HAML`
   * `TM_PERL`
   * `TM_PYFLAKES`
-  * `TM_RUBY`
+  * `TM_RUBY`/`TM_VOS_RUBY`
   * `TM_SASS`
 
 ### Regarding `TM_SASS` and `TM_COMPASS`:
 
 If `TM_COMPASS` is set to "false", validation is done using the standard Sass binary.
+
+### Regarding `TM_RUBY` and `TM_VOS_RUBY`:
+
+`TM_VOS_RUBY` takes priority over `TM_RUBY` and is useful in the cases that you
+want TextMate to use a different Ruby or Ruby wrapper for validation vs. testing as `TM_VOS_RUBY` is always run with `-w`.
 
 ### Regarding `env: ... No such file or directory`
 

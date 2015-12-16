@@ -1,8 +1,8 @@
 class VOS
   class Validate
     def self.erb
-      ruby_bin = ENV['TM_RUBY'] ||= "ruby"
-      erb_bin = ENV["TM_ERB"] ||= "erb"
+      ruby_bin = ENV['TM_VOS_RUBY'] || ENV['TM_RUBY'] || "ruby"
+      erb_bin = ENV["TM_ERB"] || "erb"
       VOS.output({
         :info => `"#{ruby_bin}" -e'puts "Running syntax check with erb and ruby-" + RUBY_VERSION.to_s'`,
         :result => `"#{erb_bin}" -T - -x | "#{ruby_bin}" -c 2>&1`.gsub(/\-\:([0-9]+)\: /i, 'Line \1: '),
