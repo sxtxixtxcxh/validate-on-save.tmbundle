@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
-VOS::Validate.bash</string>
+VOS::Validate.bash_select</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
