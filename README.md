@@ -29,7 +29,7 @@ Supported Languages
   * Perl
   * PHP
   * Python (using PyFlakes)
-  * Ruby
+  * Ruby (optionally using Rubocop)
   * Sass/Compass (still a bit buggy)
 
 
@@ -63,6 +63,7 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
   * `VOS_ERL_OUTPUT_TO_TMP`: When validating Erlang, the `.erl` file you are working on needs to be compiled to a `.beam` file to look for any syntax errors. By default when VOS compiles your file, it outputs the resulting compiled beam file to `/tmp` after which it removes it. Set this to false to have the beam file be outout to the same directory as the `.erl` file you are working on. (defaults to "false")
   * `VOS_CSS_PROFILE`: When to validate css against a specific profile. See [CSS Validator sommand settings][w3ccss] for a list of valid profiles. (defaults to 2.1)
   * `VOS_BASH_SHELLCHECK`: use Shellcheck instead of Bash to check shell scripts
+  * `VOS_RUBY_RUBOCOP`: use RuboCop instead of Ruby to check Ruby scripts
   
 ### Binary Path Options:
 
@@ -77,6 +78,7 @@ These options are used to specify the full path to the executable binaries for t
   * `TM_HAML`
   * `TM_PERL`
   * `TM_PYFLAKES`
+  * `TM_RUBOCOP`
   * `TM_RUBY`/`TM_VOS_RUBY`
   * `TM_SASS`
   * `TM_SHELLCHECK`
