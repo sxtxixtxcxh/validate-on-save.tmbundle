@@ -60,6 +60,8 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
   * `VOS_TM_NOTIFY`: Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this. (defaults to "true")
   * `VOS_GROWL`: Use Growl to display the validation result. (defaults to "false")
   * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
+  * `VOS_TRIM_LINES`: Remove trailing whitespaces from non-empty lines  (defaults to "true")
+  * `VOS_TRIM_DOCUMENT`:  Remove trailing whitespaces and new lines from end of document (defaults to "false")
   * `VOS_ERL_OUTPUT_TO_TMP`: When validating Erlang, the `.erl` file you are working on needs to be compiled to a `.beam` file to look for any syntax errors. By default when VOS compiles your file, it outputs the resulting compiled beam file to `/tmp` after which it removes it. Set this to false to have the beam file be outout to the same directory as the `.erl` file you are working on. (defaults to "false")
   * `VOS_CSS_PROFILE`: When to validate css against a specific profile. See [CSS Validator sommand settings][w3ccss] for a list of valid profiles. (defaults to 2.1)
   * `VOS_BASH_SHELLCHECK`: use Shellcheck instead of Bash to check shell scripts
