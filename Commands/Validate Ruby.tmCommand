@@ -10,12 +10,18 @@ require ENV['TM_BUNDLE_SUPPORT'] + "/lib/validate_on_save"
 VOS::Validate.ruby_select</string>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
 	<string>Validate Ruby</string>
-	<key>output</key>
-	<string>showAsTooltip</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
 	<key>scope</key>
 	<string>source.ruby - source.ruby.embedded.haml - text.html.ruby</string>
 	<key>uuid</key>

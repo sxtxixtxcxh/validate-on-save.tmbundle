@@ -22,9 +22,16 @@ class VOS
     def self.rubocop
       rubocop_bin = ENV['TM_RUBOCOP'] || "rubocop"
       filepath = ENV["TM_FILEPATH"]
+
+      info = `echo Running syntax check with rubocop-$("#{rubocop_bin}" --version)`
+
+      format = VOS.opt("VOS_HTML") ? "emacs" : "clang"
+      result = `"#{rubocop_bin}" --format #{format} "#{filepath}"`
+      result = VOS.htmlify_results(result, filepath)
+
       VOS.output({
-        :info => `echo Running syntax check with rubocop-$("#{rubocop_bin}" --version)`,
-        :result => `"#{rubocop_bin}" --format clang "#{filepath}"`,
+        :info => info,
+        :result => result,
         :match_ok => /(no|0) offenses/,
         :match_line => /\S+:(\d+):\d+: /,
         :lang => "Ruby"

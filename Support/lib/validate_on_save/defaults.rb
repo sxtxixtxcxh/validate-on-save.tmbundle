@@ -17,6 +17,9 @@ VOS_TM_NOTIFY = true
 # Use Growl notification
 VOS_GROWL = false
 
+# Use HTML output
+VOS_HTML = false
+
 # Jump to line with error
 VOS_JUMP_TO_ERROR = false
 

@@ -22,10 +22,17 @@ class VOS
     def self.shellcheck
       shellcheck_bin = ENV["TM_SHELLCHECK"] ||= "shellcheck"
       filepath = ENV["TM_FILEPATH"]
+
+      info = `echo Running syntax check with shellcheck-$("#{shellcheck_bin}" --version | head -n2 | tail -n1 | awk {'print $2'})`
+
+      format = ENV["VOS_HTML"] ? "gcc" : "tty"
+      result = `"#{shellcheck_bin}" --shell=bash --format=#{format} "#{filepath}" && echo VOSOK`
+      result = VOS.htmlify_results(result, filepath)
+
       VOS.output({
-        :info => `echo Running syntax check with shellcheck-$("#{shellcheck_bin}" --version | head -n2 | tail -n1 | awk {'print $2'})`,
-        :result => `"#{shellcheck_bin}" --shell=bash "#{filepath}" && echo VOSOK!`,
-        :match_ok => /^VOSOK!$/,
+        :info => info,
+        :result => result.gsub(/^VOSOK$/, ""),
+        :match_ok => /^VOSOK$/,
         :match_line => /line (\d+)/i,
         :lang => "Bash"
       })
