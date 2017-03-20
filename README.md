@@ -45,7 +45,7 @@ Follow these instructions if you have Git installed:
     
 Installing via Git will allow you to keep up to date with the `Bundles` > `Validate On Save` > `Update Bundle` menu command.
 
-If you don't have Git and downloaded this from Github (really? you don't have Git?), after you've unzipped or untarred, you'll have to rename the folder from `sxtxixtxcxh-validate-on-save.tmbundle-#{HASH}` to `Validate On Save.tmbundle`. Double click and TextMate should install it for you.
+If you don't have Git and downloaded this from GitHub (really? you don't have Git?), after you've unzipped or untarred, you'll have to rename the folder from `sxtxixtxcxh-validate-on-save.tmbundle-#{HASH}` to `Validate On Save.tmbundle`. Double click and TextMate should install it for you.
 
 
 Configuration
@@ -58,6 +58,7 @@ You can customize how and when VOS (Validate On Save) notifies you. This is done
   * `VOS_VALIDATOR_INFO`: Outputs information about the validator. (defaults to "false")
   * `VOS_ONLY_ON_ERROR`: Only displays notifications on syntax error. Useful if you don't want to be told repeatedly that everything is OK. (defaults to "false")
   * `VOS_TM_NOTIFY`: Display the validation result in a TextMate tooltip. If you use Growl, you might want to disable this. (defaults to "true")
+  * `VOS_HTML`: Display the validation result in the TextMate HTML output (defaults to "false")
   * `VOS_GROWL`: Use Growl to display the validation result. (defaults to "false")
   * `VOS_JUMP_TO_ERROR`: When a error is found, automatically move the cursor to the line causing the problem. (defaults to "false")
   * `VOS_TRIM_LINES`: Remove trailing whitespaces from non-empty lines  (defaults to "true")

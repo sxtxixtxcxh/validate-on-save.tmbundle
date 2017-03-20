@@ -75,6 +75,21 @@ class VOS
   # Util methods
   #
   
+  def self.htmlify_results(result, filepath)
+    return result unless VOS.opt("VOS_HTML")
+    filename = File.basename(filepath)
+    result.gsub!(filepath, "")
+    result = <<-EOS
+<h3><a href='txmt://open/?url=file://#{filepath}'>#{filename}:</a></h3>
+#{result}
+EOS
+    result.gsub!(/:(\d+):(\d+): /,
+      "<li><a href='txmt://open/?url=file://#{filepath}&line=\\1&column=\\2'>L\\1</a> ")
+    result.gsub!(/line (\d+), col (\d+), found: /,
+      "<li><a href='txmt://open/?url=file://#{filepath}&line=\\1&column=\\2'>L\\1</a>: ")
+    result
+  end
+
   def self.opt(key)
     if ENV.has_key?(key)
       return (ENV[key] == "true") ? true : false
